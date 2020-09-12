@@ -1,28 +1,44 @@
 #include <stdio.h>
+ 
 struct Vec{
-    int x;
-    int y;
+	float x;
+	float y;
 } typedef Vec;
-Vec add(Vec first, Vec right);
-int main()
-{
-    Vec test;
-    Vec test2;
-    test.x = 5;
-    test.y =10;
-    test2.x = 5;
-    test2.y =10;
-    printf("The integer is: %d\n", test.x);
+ 
+Vec add(Vec first, Vec second){
     Vec new;
-    new = add(test, test2);
-    printf("The integer is: %d\n", new.x);
-    return 0;
-}
-
-Vec add(Vec first, Vec right){
-    Vec new;
-    new.x = first.x + right.x;
-    new.y = first.x + right.x;
+    new.x = first.x + second.x; 
+    new.y = first.y + second.y;
     return new;
-    
-}   
+}
+ 
+Vec sub(Vec first, Vec second){
+    Vec new;
+    new.x = first.x - second.x; 
+    new.y = first.y -  second.y;
+    return new;
+}
+ 
+Vec mul(Vec first, float second){
+    Vec new;
+    new.x = first.x * second; 
+    new.y = first.y *  second;
+    return new;
+}
+Vec div(Vec first, float second){
+    Vec new;
+    new.x = first.x / second;
+    new.y = first.y / second;
+    return new;
+}
+void print_vec(Vec vec){
+    printf("x: %f, y %f\n", vec.x, vec.y);
+}
+int main(){
+    Vec newVec;
+    newVec.x = 5.0;
+    newVec.y = 2.4;
+ 
+    Vec z = mul(newVec, 2);
+    print_vec(z);
+}
