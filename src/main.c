@@ -37,10 +37,12 @@ double magnitude(Vec vec){
     return sqrt((vec.x * vec.x) + (vec.y * vec.y));
 }
 
-Vec unit_vec(Vec first){
-    Vec new;
-
+double unit_vec(Vec first, Vec second){
+	double new = first.x + first.y + second.x + second.y;
+	
+	return new;
 }
+
 void print_vec(Vec vec){
     printf("x: %f, y %f\n", vec.x, vec.y);
 }
